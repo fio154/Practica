@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Pantalla2"
+            android:parentActivityName=".MainActivity" />
+
+        <receiver android:name=".NotificacionPantalla2" android:exported="true">
+        </receiver>
+
     </application>
 
 </manifest>

@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Pantalla2">
 
-    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/toolbar"
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
+        android:id="@+id/toolbar"
         android:layout_height="?attr/actionBarSize"
-        android:background="#E84D4D" />
+        android:background="#E84D4D"
+        xmlns:android="http://schemas.android.com/apk/res/android"/>
 
     <Button
-        android:id="@+id/Pantalla2"
+        android:id="@+id/mandar_notifiacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="pantalla 2" />
-
+        android:text="mandar notificación" />
 
 </LinearLayout>
