@@ -5,16 +5,24 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.List;
+
+import isi.dam.practica.Database.PersonaRepository;
+import isi.dam.practica.Modelo.OnPersonaResultCallback;
+import isi.dam.practica.Modelo.Persona;
 import isi.dam.practica.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnPersonaResultCallback {
 
     Button pasar_pantalla, btn_implicito;
     Toolbar toolbar;
+    PersonaRepository repository;
+    TextView count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,30 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       /* PracticaDatabase db = new PracticaDatabase() {
-            @Override
-            public PersonaDAO PersonaDAO() {
-                return null;
-            }
-
-            @NonNull
-            @Override
-            protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration config) {
-                return null;
-            }
-
-            @NonNull
-            @Override
-            protected InvalidationTracker createInvalidationTracker() {
-                return null;
-            }
-
-            @Override
-            public void clearAllTables() {
-
-            }
-        };
-
+       /*
         PersonaRepository repo = new PersonaRepository(this.getApplication());
 
         //Persona persona = new Persona("fiorella", "triverio", 21);
@@ -76,9 +61,19 @@ public class MainActivity extends AppCompatActivity {
         List<Persona> personas = repo.getAllPersons();
         for(Persona i : personas) {
             System.out.println(i.getNombre() + " " + i.getApellido()+ " " + i.getEdad());
-        }*/
+        }
+        */
 
+       /* repository = new PersonaRepository(this.getApplication(), this);
+        Persona persona = new Persona("fiorella", "triverio", 21);
+        repository.insertar(persona);
 
+        System.out.println("holaaa   " + repository.count());*/
 
+    }
+
+    @Override
+    public void onResult(List<Persona> persona) {
+        System.out.println("EXITOOOOOOO");
     }
 }
