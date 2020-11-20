@@ -44,6 +44,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+       /* PracticaDatabase db = new PracticaDatabase() {
+            @Override
+            public PersonaDAO PersonaDAO() {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration config) {
+                return null;
+            }
+
+            @NonNull
+            @Override
+            protected InvalidationTracker createInvalidationTracker() {
+                return null;
+            }
+
+            @Override
+            public void clearAllTables() {
+
+            }
+        };
+
+        PersonaRepository repo = new PersonaRepository(this.getApplication());
+
+        //Persona persona = new Persona("fiorella", "triverio", 21);
+        //repo.insertar(persona);
+
+        List<Persona> personas = repo.getAllPersons();
+        for(Persona i : personas) {
+            System.out.println(i.getNombre() + " " + i.getApellido()+ " " + i.getEdad());
+        }*/
+
+
 
     }
 }

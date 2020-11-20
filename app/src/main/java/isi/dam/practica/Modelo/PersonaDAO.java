@@ -19,14 +19,17 @@ public interface PersonaDAO {
     @Update
     void actualizar(Persona persona);
 
-    @Query("SELECT * FROM persona WHERE id = :id LIMIT 1")
-    Persona buscar(String id);
+    //@Query("SELECT * FROM persona WHERE id = :id LIMIT 1")
+    //Persona buscar(String id);
 
     @Query("SELECT * FROM persona")
     List<Persona> buscarTodos();
 
     @Query("DELETE FROM persona WHERE persona_column_id = :id ")
     int deleteById(long id);
+
+    @Query("select * from persona")
+    List<Persona> getAll();
 
 
 }

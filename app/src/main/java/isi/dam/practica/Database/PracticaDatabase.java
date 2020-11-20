@@ -16,7 +16,6 @@ import isi.dam.practica.Modelo.PersonaDAO;
 public abstract class PracticaDatabase extends RoomDatabase {
     public static Executor databaseWriteExecutor;
 
-    @SuppressWarnings("WeakerAccess")
     public abstract PersonaDAO PersonaDAO();
 
     static PracticaDatabase getInstance(final Context context) {
