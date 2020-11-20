@@ -1,4 +1,4 @@
-package isi.dam.practica;
+package isi.dam.practica.Notifiaciones;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -10,14 +10,14 @@ import android.os.Build;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import isi.dam.practica.R;
+
 public class NotificacionPantalla2 extends BroadcastReceiver {
 
-    private static final String CHANNEL_ID = "Pedido confirmado";
+    private static final String CHANNEL_ID = "Canal notificación";
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        System.out.println("HOLAA A VER Q ONDAAAA");
-
         createNotificationChannel(context);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)

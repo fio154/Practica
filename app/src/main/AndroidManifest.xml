@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Practica">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,10 +18,10 @@
         </activity>
 
         <activity
-            android:name=".Pantalla2"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Activities.Pantalla2"
+            android:parentActivityName=".Activities.MainActivity" />
 
-        <receiver android:name=".NotificacionPantalla2" android:exported="true">
+        <receiver android:name=".Notifiaciones.NotificacionPantalla2" android:exported="true">
         </receiver>
 
     </application>

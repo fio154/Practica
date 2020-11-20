@@ -1,4 +1,4 @@
-package isi.dam.practica;
+package isi.dam.practica.Activities;
 
 
 import android.content.Context;
@@ -10,6 +10,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import isi.dam.practica.Notifiaciones.NotificacionPantalla2;
+import isi.dam.practica.R;
 
 public class Pantalla2 extends AppCompatActivity {
 
@@ -53,7 +56,6 @@ public class Pantalla2 extends AppCompatActivity {
 
             Intent notificationIntent = new Intent(contexto, NotificacionPantalla2.class);
             contexto.sendBroadcast(notificationIntent);
-
 
         }
     }
