@@ -43,11 +43,12 @@ public class PersonaRepository implements OnPersonaResultCallback {
     }
 
     public int count() {
-        final int[] resul = {-1};
+       int[] resul = {-1};
         PracticaDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
                 resul[0] =  personaDAO.count();
+                System.out.println("probando  " + personaDAO.count());
             }
         });
       return resul[0];
@@ -56,7 +57,7 @@ public class PersonaRepository implements OnPersonaResultCallback {
 
     @Override
     public void onResult(List<Persona> persona) {
-        Log.d("DEBUG", "Plato found");
+        Log.d("DEBUG", "Persona encontrada");
         callback.onResult(persona);
     }
 

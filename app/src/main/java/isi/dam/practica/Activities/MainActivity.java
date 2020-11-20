@@ -1,5 +1,6 @@
 package isi.dam.practica.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import java.util.List;
 
 import isi.dam.practica.Database.PersonaRepository;
 import isi.dam.practica.Modelo.OnPersonaResultCallback;
+import isi.dam.practica.Modelo.OtraPersona;
 import isi.dam.practica.Modelo.Persona;
 import isi.dam.practica.R;
 
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements OnPersonaResultCa
     Toolbar toolbar;
     PersonaRepository repository;
     TextView count;
+    Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +37,16 @@ public class MainActivity extends AppCompatActivity implements OnPersonaResultCa
 
         pasar_pantalla = (Button) findViewById(R.id.Pantalla2);
 
-        Intent pasarPAntallla2 = new Intent(this, Pantalla2.class);
+        OtraPersona op = new OtraPersona("fiorella", "triverio", 21);
+
+        Intent pasarPAntallla2 = new Intent(context, Pantalla2.class);
+
+        pasarPAntallla2.putExtra("op", op);
+
         pasar_pantalla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startActivity(pasarPAntallla2);
+                context.startActivity(pasarPAntallla2);
             }
         });
 
@@ -52,19 +59,8 @@ public class MainActivity extends AppCompatActivity implements OnPersonaResultCa
             }
         });
 
-       /*
-        PersonaRepository repo = new PersonaRepository(this.getApplication());
-
-        //Persona persona = new Persona("fiorella", "triverio", 21);
-        //repo.insertar(persona);
-
-        List<Persona> personas = repo.getAllPersons();
-        for(Persona i : personas) {
-            System.out.println(i.getNombre() + " " + i.getApellido()+ " " + i.getEdad());
-        }
-        */
-
-       /* repository = new PersonaRepository(this.getApplication(), this);
+        //BD
+        /*repository = new PersonaRepository(this.getApplication(), this);
         Persona persona = new Persona("fiorella", "triverio", 21);
         repository.insertar(persona);
 

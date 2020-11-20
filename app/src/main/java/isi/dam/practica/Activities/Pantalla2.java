@@ -1,6 +1,4 @@
 package isi.dam.practica.Activities;
-
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -8,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +21,7 @@ public class Pantalla2 extends AppCompatActivity {
     Button mandar_notifiacion, button, button2, button3;
     Context contexto = this;
     ProgressBar progressBar;
+    TextView nombre_op;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +73,12 @@ public class Pantalla2 extends AppCompatActivity {
 
             }
         });
+
+        /*OtraPersona op = getIntent().getParcelableExtra("op");
+        System.out.println(op.getNombre());
+
+        nombre_op = (TextView) findViewById(R.id.nombre_otraPersona);
+        nombre_op.setText(op.getNombre());*/
 
     }
 
